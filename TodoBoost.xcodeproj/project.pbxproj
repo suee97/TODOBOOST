@@ -7,39 +7,118 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FCE0542DD3B373B10FE8A17 /* Pods_TodoBoost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213EC7FE1E7892187E76A3B9 /* Pods_TodoBoost.framework */; };
+		5B71DF552A497C6300564D50 /* MonthVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B71DF542A497C6300564D50 /* MonthVMTests.swift */; };
+		5B71DF5D2A52AE6200564D50 /* MonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B71DF5C2A52AE6200564D50 /* MonthTableViewCell.swift */; };
 		5BF021CC2A21C0280070394C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF021CB2A21C0280070394C /* AppDelegate.swift */; };
 		5BF021CE2A21C0280070394C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF021CD2A21C0280070394C /* SceneDelegate.swift */; };
-		5BF021D02A21C0280070394C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF021CF2A21C0280070394C /* ViewController.swift */; };
+		5BF021D02A21C0280070394C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF021CF2A21C0280070394C /* MainViewController.swift */; };
 		5BF021D52A21C0280070394C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF021D42A21C0280070394C /* Assets.xcassets */; };
 		5BF021D82A21C0280070394C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF021D62A21C0280070394C /* LaunchScreen.storyboard */; };
+		5BF0221F2A36033D0070394C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0221E2A36033D0070394C /* LoginViewController.swift */; };
+		5BF022212A3603510070394C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022202A3603510070394C /* LoginViewModel.swift */; };
+		5BF022232A363B180070394C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022222A363B180070394C /* Extensions.swift */; };
+		5BF022252A363CA70070394C /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022242A363CA70070394C /* Commons.swift */; };
+		5BF022272A387D7C0070394C /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022262A387D7C0070394C /* LoadingState.swift */; };
+		5BF0222A2A38806E0070394C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022292A38806E0070394C /* AuthService.swift */; };
+		5BF0222C2A3880C10070394C /* AuthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0222B2A3880C10070394C /* AuthResult.swift */; };
+		5BF0222E2A38C3E40070394C /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0222D2A38C3E40070394C /* MonthViewController.swift */; };
+		5BF022302A38C4090070394C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0222F2A38C4090070394C /* SearchViewController.swift */; };
+		5BF022322A38C4190070394C /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022312A38C4190070394C /* ConfigViewController.swift */; };
+		5BF022362A3AEBEE0070394C /* MonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022352A3AEBEE0070394C /* MonthViewModel.swift */; };
+		5BF022382A3AEC080070394C /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022372A3AEC080070394C /* DayViewModel.swift */; };
+		5BF0223A2A3AEC180070394C /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022392A3AEC180070394C /* ConfigViewModel.swift */; };
+		5BF0223C2A3AEE6D0070394C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0223B2A3AEE6D0070394C /* Schedule.swift */; };
+		5BF0223E2A3B02B90070394C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0223D2A3B02B90070394C /* NetworkService.swift */; };
+		5BF022402A3CD68F0070394C /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0223F2A3CD68F0070394C /* APIResult.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5B71DF562A497C6300564D50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BF021C02A21C0280070394C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BF021C72A21C0280070394C;
+			remoteInfo = TodoBoost;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		213EC7FE1E7892187E76A3B9 /* Pods_TodoBoost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoBoost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B71DF522A497C6300564D50 /* MonthVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonthVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B71DF542A497C6300564D50 /* MonthVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthVMTests.swift; sourceTree = "<group>"; };
+		5B71DF5C2A52AE6200564D50 /* MonthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTableViewCell.swift; sourceTree = "<group>"; };
 		5BF021C82A21C0280070394C /* TodoBoost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoBoost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF021CB2A21C0280070394C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BF021CD2A21C0280070394C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5BF021CF2A21C0280070394C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BF021CF2A21C0280070394C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5BF021D42A21C0280070394C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BF021D72A21C0280070394C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BF021D92A21C0280070394C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BF0221E2A36033D0070394C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5BF022202A3603510070394C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5BF022222A363B180070394C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5BF022242A363CA70070394C /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
+		5BF022262A387D7C0070394C /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		5BF022292A38806E0070394C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		5BF0222B2A3880C10070394C /* AuthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResult.swift; sourceTree = "<group>"; };
+		5BF0222D2A38C3E40070394C /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
+		5BF0222F2A38C4090070394C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5BF022312A38C4190070394C /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		5BF022352A3AEBEE0070394C /* MonthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewModel.swift; sourceTree = "<group>"; };
+		5BF022372A3AEC080070394C /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
+		5BF022392A3AEC180070394C /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
+		5BF0223B2A3AEE6D0070394C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		5BF0223D2A3B02B90070394C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5BF0223F2A3CD68F0070394C /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		79E81527486872D2DF7C77F2 /* Pods-TodoBoost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoBoost.debug.xcconfig"; path = "Target Support Files/Pods-TodoBoost/Pods-TodoBoost.debug.xcconfig"; sourceTree = "<group>"; };
+		A1FD5A8766B8C0EA9555A5AD /* Pods-TodoBoost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoBoost.release.xcconfig"; path = "Target Support Files/Pods-TodoBoost/Pods-TodoBoost.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5BF021C52A21C0280070394C /* Frameworks */ = {
+		5B71DF4F2A497C6300564D50 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BF021C52A21C0280070394C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FCE0542DD3B373B10FE8A17 /* Pods_TodoBoost.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B71DF532A497C6300564D50 /* MonthVMTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B71DF542A497C6300564D50 /* MonthVMTests.swift */,
+			);
+			path = MonthVMTests;
+			sourceTree = "<group>";
+		};
+		5B71DF5B2A52AE2800564D50 /* Month */ = {
+			isa = PBXGroup;
+			children = (
+				5BF0222D2A38C3E40070394C /* MonthViewController.swift */,
+				5B71DF5C2A52AE6200564D50 /* MonthTableViewCell.swift */,
+			);
+			path = Month;
+			sourceTree = "<group>";
+		};
 		5BF021BF2A21C0280070394C = {
 			isa = PBXGroup;
 			children = (
 				5BF021CA2A21C0280070394C /* TodoBoost */,
+				5B71DF532A497C6300564D50 /* MonthVMTests */,
 				5BF021C92A21C0280070394C /* Products */,
+				6B207D5C2BC64D6452DFD639 /* Pods */,
+				C59EA939BCA4ED287C45B0B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				5BF021C82A21C0280070394C /* TodoBoost.app */,
+				5B71DF522A497C6300564D50 /* MonthVMTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,9 +134,13 @@
 		5BF021CA2A21C0280070394C /* TodoBoost */ = {
 			isa = PBXGroup;
 			children = (
+				5BF022282A3880440070394C /* APIServices */,
+				5BF021EB2A2B2E420070394C /* ViewModels */,
+				5BF021E82A2B2DEA0070394C /* Views */,
+				5BF021E52A2B2D4B0070394C /* Models */,
+				5BF021DF2A21C8540070394C /* Utils */,
 				5BF021CB2A21C0280070394C /* AppDelegate.swift */,
 				5BF021CD2A21C0280070394C /* SceneDelegate.swift */,
-				5BF021CF2A21C0280070394C /* ViewController.swift */,
 				5BF021D42A21C0280070394C /* Assets.xcassets */,
 				5BF021D62A21C0280070394C /* LaunchScreen.storyboard */,
 				5BF021D92A21C0280070394C /* Info.plist */,
@@ -64,16 +148,105 @@
 			path = TodoBoost;
 			sourceTree = "<group>";
 		};
+		5BF021DF2A21C8540070394C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5BF022222A363B180070394C /* Extensions.swift */,
+				5BF022242A363CA70070394C /* Commons.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5BF021E52A2B2D4B0070394C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5BF022262A387D7C0070394C /* LoadingState.swift */,
+				5BF0222B2A3880C10070394C /* AuthResult.swift */,
+				5BF0223B2A3AEE6D0070394C /* Schedule.swift */,
+				5BF0223F2A3CD68F0070394C /* APIResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5BF021E82A2B2DEA0070394C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B71DF5B2A52AE2800564D50 /* Month */,
+				5BF021CF2A21C0280070394C /* MainViewController.swift */,
+				5BF0221E2A36033D0070394C /* LoginViewController.swift */,
+				5BF0222F2A38C4090070394C /* SearchViewController.swift */,
+				5BF022312A38C4190070394C /* ConfigViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5BF021EB2A2B2E420070394C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5BF022202A3603510070394C /* LoginViewModel.swift */,
+				5BF022352A3AEBEE0070394C /* MonthViewModel.swift */,
+				5BF022372A3AEC080070394C /* DayViewModel.swift */,
+				5BF022392A3AEC180070394C /* ConfigViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5BF022282A3880440070394C /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				5BF022292A38806E0070394C /* AuthService.swift */,
+				5BF0223D2A3B02B90070394C /* NetworkService.swift */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		6B207D5C2BC64D6452DFD639 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79E81527486872D2DF7C77F2 /* Pods-TodoBoost.debug.xcconfig */,
+				A1FD5A8766B8C0EA9555A5AD /* Pods-TodoBoost.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C59EA939BCA4ED287C45B0B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				213EC7FE1E7892187E76A3B9 /* Pods_TodoBoost.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5B71DF512A497C6300564D50 /* MonthVMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B71DF582A497C6300564D50 /* Build configuration list for PBXNativeTarget "MonthVMTests" */;
+			buildPhases = (
+				5B71DF4E2A497C6300564D50 /* Sources */,
+				5B71DF4F2A497C6300564D50 /* Frameworks */,
+				5B71DF502A497C6300564D50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B71DF572A497C6300564D50 /* PBXTargetDependency */,
+			);
+			name = MonthVMTests;
+			productName = MonthVMTests;
+			productReference = 5B71DF522A497C6300564D50 /* MonthVMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5BF021C72A21C0280070394C /* TodoBoost */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BF021DC2A21C0280070394C /* Build configuration list for PBXNativeTarget "TodoBoost" */;
 			buildPhases = (
+				F68848BC505661B50E32EBF5 /* [CP] Check Pods Manifest.lock */,
 				5BF021C42A21C0280070394C /* Sources */,
 				5BF021C52A21C0280070394C /* Frameworks */,
 				5BF021C62A21C0280070394C /* Resources */,
+				CF36F43F5308E35C52E00AC6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -94,6 +267,10 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					5B71DF512A497C6300564D50 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 5BF021C72A21C0280070394C;
+					};
 					5BF021C72A21C0280070394C = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -113,11 +290,19 @@
 			projectRoot = "";
 			targets = (
 				5BF021C72A21C0280070394C /* TodoBoost */,
+				5B71DF512A497C6300564D50 /* MonthVMTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5B71DF502A497C6300564D50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BF021C62A21C0280070394C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,18 +314,93 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CF36F43F5308E35C52E00AC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodoBoost/Pods-TodoBoost-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodoBoost/Pods-TodoBoost-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodoBoost/Pods-TodoBoost-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F68848BC505661B50E32EBF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TodoBoost-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		5B71DF4E2A497C6300564D50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B71DF552A497C6300564D50 /* MonthVMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BF021C42A21C0280070394C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BF021D02A21C0280070394C /* ViewController.swift in Sources */,
+				5BF021D02A21C0280070394C /* MainViewController.swift in Sources */,
+				5BF022212A3603510070394C /* LoginViewModel.swift in Sources */,
+				5BF022402A3CD68F0070394C /* APIResult.swift in Sources */,
+				5BF0223C2A3AEE6D0070394C /* Schedule.swift in Sources */,
+				5BF0223A2A3AEC180070394C /* ConfigViewModel.swift in Sources */,
+				5BF0223E2A3B02B90070394C /* NetworkService.swift in Sources */,
+				5BF022382A3AEC080070394C /* DayViewModel.swift in Sources */,
 				5BF021CC2A21C0280070394C /* AppDelegate.swift in Sources */,
+				5BF022322A38C4190070394C /* ConfigViewController.swift in Sources */,
+				5BF022252A363CA70070394C /* Commons.swift in Sources */,
+				5BF0222E2A38C3E40070394C /* MonthViewController.swift in Sources */,
+				5BF0221F2A36033D0070394C /* LoginViewController.swift in Sources */,
+				5BF022272A387D7C0070394C /* LoadingState.swift in Sources */,
+				5BF022302A38C4090070394C /* SearchViewController.swift in Sources */,
+				5BF0222C2A3880C10070394C /* AuthResult.swift in Sources */,
+				5BF0222A2A38806E0070394C /* AuthService.swift in Sources */,
+				5B71DF5D2A52AE6200564D50 /* MonthTableViewCell.swift in Sources */,
 				5BF021CE2A21C0280070394C /* SceneDelegate.swift in Sources */,
+				5BF022362A3AEBEE0070394C /* MonthViewModel.swift in Sources */,
+				5BF022232A363B180070394C /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B71DF572A497C6300564D50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BF021C72A21C0280070394C /* TodoBoost */;
+			targetProxy = 5B71DF562A497C6300564D50 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5BF021D62A21C0280070394C /* LaunchScreen.storyboard */ = {
@@ -154,6 +414,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5B71DF592A497C6300564D50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2K66M6663R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = suee97.MonthVMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodoBoost.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TodoBoost";
+			};
+			name = Debug;
+		};
+		5B71DF5A2A497C6300564D50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2K66M6663R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = suee97.MonthVMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodoBoost.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TodoBoost";
+			};
+			name = Release;
+		};
 		5BF021DA2A21C0280070394C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -270,6 +574,7 @@
 		};
 		5BF021DD2A21C0280070394C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79E81527486872D2DF7C77F2 /* Pods-TodoBoost.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -282,6 +587,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,6 +603,7 @@
 		};
 		5BF021DE2A21C0280070394C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1FD5A8766B8C0EA9555A5AD /* Pods-TodoBoost.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +616,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +633,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5B71DF582A497C6300564D50 /* Build configuration list for PBXNativeTarget "MonthVMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B71DF592A497C6300564D50 /* Debug */,
+				5B71DF5A2A497C6300564D50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5BF021C32A21C0280070394C /* Build configuration list for PBXProject "TodoBoost" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

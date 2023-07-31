@@ -1,0 +1,6 @@
+framework module Pods_TodoBoost {
+  umbrella header "Pods-TodoBoost-umbrella.h"
+
+  export *
+  module * { export * }
+}

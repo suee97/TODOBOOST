@@ -1,24 +1,17 @@
-//
-//  SceneDelegate.swift
-//  TodoBoost
-//
-//  Created by 오승언 on 2023/05/27.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let vc = ViewController()
+        let vc = LoginViewController()
+        var navController = UINavigationController(rootViewController: vc)
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = vc
+        window.rootViewController = navController
         window.makeKeyAndVisible()
         self.window = window
     }
