@@ -27,6 +27,12 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         return label
     }()
     
+    private let todayLabelView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .secondaryPurple
+        return view
+    }()
+    
     private let todayLabel: UILabel = {
         let label = UILabel()
         label.font = label.font.withSize(24)
@@ -103,6 +109,8 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         view.addSubview(tableView)
         headerView.addSubview(appNameLabel)
         headerView.addSubview(calendar)
+        headerView.addSubview(todayLabelView)
+        headerView.addSubview(todayLabel)
         
         indicator.snp.makeConstraints({ m in
             m.left.right.top.bottom.equalTo(view)
@@ -124,11 +132,20 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         })
         
         calendar.snp.makeConstraints({ m in
-            m.width.equalTo(headerView)
+            m.left.right.equalTo(headerView).inset(contentSideMargin)
             m.top.equalTo(appNameLabel.snp.bottom)
-            m.bottom.equalTo(headerView.snp.bottom)
+            m.bottom.equalTo(todayLabelView.snp.top)
         })
         
+        todayLabelView.snp.makeConstraints({ m in
+            m.left.right.bottom.equalTo(headerView)
+            m.height.equalTo(60)
+        })
+        
+        todayLabel.snp.makeConstraints({ m in
+            m.centerY.equalTo(todayLabelView)
+            m.left.equalTo(todayLabelView).inset(44)
+        })
     }
     
     
