@@ -11,15 +11,14 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     private var daySubscriber: AnyCancellable!
     
     private let contentSideMargin: ConstraintInsetTarget = 16
-    
     private let tableView = UITableView()
-    
-    private let contentView: UIView = {
+
+    private let headerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemPurple
+        view.backgroundColor = .primaryPurple
         return view
     }()
-
+    
     private let appNameLabel: UILabel = {
         let label = UILabel()
         label.text = "TO DO BOOST"
@@ -32,7 +31,6 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         let label = UILabel()
         label.font = label.font.withSize(24)
         label.textColor = .white
-        label.backgroundColor = .systemMint
         return label
     }()
     
@@ -79,12 +77,6 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         return calendar
     }()
     
-    private let memoView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .yellow
-        return view
-    }()
-    
     // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -101,11 +93,44 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         setUpSubscribers()
     }
     
+    
     // MARK: UI
     private func configureUI() {
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .primaryPurple
         isAllViewHide(true)
+        
+        view.addSubview(indicator)
+        view.addSubview(tableView)
+        headerView.addSubview(appNameLabel)
+        headerView.addSubview(calendar)
+        
+        indicator.snp.makeConstraints({ m in
+            m.left.right.top.bottom.equalTo(view)
+        })
+        
+        tableView.snp.makeConstraints({ m in
+            m.left.right.bottom.equalTo(view)
+            m.top.equalTo(view.safeAreaLayoutGuide)
+        })
+        
+        headerView.snp.makeConstraints({ m in
+            m.width.equalTo(Commons.shared.screenWidth)
+            m.height.equalTo(392)
+        })
+        
+        appNameLabel.snp.makeConstraints({ m in
+            m.centerX.equalTo(headerView)
+            m.bottom.equalTo(headerView.snp.top).inset(32)
+        })
+        
+        calendar.snp.makeConstraints({ m in
+            m.width.equalTo(headerView)
+            m.top.equalTo(appNameLabel.snp.bottom)
+            m.bottom.equalTo(headerView.snp.bottom)
+        })
+        
     }
+    
     
     // MARK: Functions
     private func setUpDelegate() {
@@ -156,10 +181,12 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     
     private func setUpTableView() {
         tableView.register(MonthTableViewCell.self, forCellReuseIdentifier: "schedule_cell")
-        tableView.isScrollEnabled = false
         tableView.rowHeight = 48
 //        tableView.backgroundColor = .secondaryPurple
-        tableView.backgroundColor = .magenta.withAlphaComponent(0.5)
+        tableView.backgroundColor = .brown
+        tableView.bounces = false
+        
+        tableView.tableHeaderView = headerView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
