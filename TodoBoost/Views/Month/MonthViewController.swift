@@ -19,14 +19,7 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         view.backgroundColor = .systemPurple
         return view
     }()
-    
-    private let todoView: UIView = {
-        let view = UIView()
-//        view.backgroundColor = .secondaryPurple
-        view.backgroundColor = .gray
-        return view
-    }()
-    
+
     private let appNameLabel: UILabel = {
         let label = UILabel()
         label.text = "TO DO BOOST"
@@ -111,99 +104,6 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     // MARK: UI
     private func configureUI() {
         view.backgroundColor = .systemBlue
-//
-//        view.addSubview(scrollView)
-//        scrollView.addSubview(contentView)
-//        contentView.addSubview(appNameLabel)
-//        contentView.addSubview(calendar)
-//        contentView.addSubview(todayLabel)
-//        contentView.addSubview(tableView)
-//        scrollView.addSubview(appNameLabel)
-//        contentView.addSubview(calendar)
-//        contentView.addSubview(todoView)
-//        scrollView.addSubview(indicator)
-//        todoView.addSubview(tableView)
-//        todoView.addSubview(todayLabel)
-        
-        
-        
-//        scrollView.snp.makeConstraints({ m in
-//            m.left.right.top.bottom.equalTo(view)
-//        })
-//
-//        contentView.snp.makeConstraints({ m in
-//            m.left.right.top.bottom.equalTo(scrollView)
-//            m.width.height.equalTo(scrollView)
-//        })
-//
-//        appNameLabel.snp.makeConstraints({ m in
-//            m.centerX.equalTo(contentView)
-//            m.top.equalTo(contentView.safeAreaLayoutGuide)
-//        })
-//
-//        calendar.snp.makeConstraints({ m in
-//            m.left.right.equalTo(contentView).inset(contentSideMargin)
-//            m.top.equalTo(appNameLabel.snp.bottom).offset(16)
-//            m.height.equalTo(300)
-//        })
-//
-//        todayLabel.snp.makeConstraints({ m in
-//            m.left.equalTo(contentView).inset(48)
-//            m.top.equalTo(calendar.snp.bottom).offset(20)
-//        })
-//
-//        tableView.snp.makeConstraints({ m in
-////            m.left.right.equalTo(todoView)
-//            //            m.bottom.equalTo(todoView).inset(200)
-//            //            m.top.equalTo(todoView).inset(72)
-//            m.left.right.equalTo(contentView)
-//            m.top.equalTo(todayLabel.snp.bottom)
-//
-//        })
-        
-        
-//        todoView.snp.makeConstraints({ m in
-//            m.left.right.equalTo(view)
-//            m.top.equalTo(calendar.snp.bottom)
-//            m.bottom.equalTo(scrollView.contentLayoutGuide)
-//            m.left.right.equalTo(scrollView.contentLayoutGuide)
-//        })
-        
-//        todayLabel.snp.makeConstraints({ m in
-//            m.left.equalTo(todoView).inset(48)
-//            m.top.equalTo(todoView).inset(20)
-//        })
-        
-//
-//        indicator.snp.makeConstraints({ m in
-//            m.centerX.centerY.equalTo(view)
-//        })
-        
-//        tableView.snp.makeConstraints({ m in
-//            m.left.right.equalTo(todoView)
-//            m.bottom.equalTo(todoView).inset(200)
-//            m.top.equalTo(todoView).inset(72)
-//        })
-        
-//        todayLabel.snp.makeConstraints({ m in
-//            m.left.equalTo(todoView).inset(48)
-//            m.top.equalTo(todoView).inset(20)
-//        })
-        
-//        memoView.snp.makeConstraints({ m in
-//            m.width.height.equalTo(200)
-//            m.bottom.equalTo(scrollView)
-//        })
-        
-        
-//        todoView.snp.makeConstraints({ m in
-//            m.width.equalTo(200)
-//            m.height.equalTo(200)
-//            m.centerX.equalTo(contentView)
-//            m.top.equalTo(contentView).inset(400)
-//            m.bottom.equalTo(contentView)
-//        })
-        
         isAllViewHide(true)
     }
     
@@ -217,14 +117,12 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     
     private func isAllViewHide(_ isHidden: Bool) {
         calendar.isHidden = isHidden
-        todoView.isHidden = isHidden
     }
     
     private func setUpSubscribers() {
         loadingSubscriber = viewModel.$loadingState.sink(receiveValue: {
             // API 호출 이후
             if $0 == .done {
-                self.setUpScrollSize(count: self.viewModel.schedules[self.viewModel.selectedDay].count)
                 self.changeTodayLabel(date: self.viewModel.today)
                 self.indicator.stopAnimating()
                 self.isAllViewHide(false)
@@ -232,9 +130,9 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
             }
         })
         
-        daySubscriber = viewModel.$selectedDay.sink(receiveValue: {
-            self.setUpScrollSize(count: self.viewModel.schedules[$0!].count)
-        })
+//        daySubscriber = viewModel.$selectedDay.sink(receiveValue: {
+//            self.setUpScrollSize(count: self.viewModel.schedules[$0!].count)
+//        })
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -262,14 +160,6 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         tableView.rowHeight = 48
 //        tableView.backgroundColor = .secondaryPurple
         tableView.backgroundColor = .magenta.withAlphaComponent(0.5)
-    }
-    
-    private func setUpScrollSize(count: Int) {
-//        let height = todoView.frame.minY + 72 + CGFloat(count * 48) + 500
-//        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: height)
-//
-//        print("MonthViewController setUpScrollSize() - height : \(height)")
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
