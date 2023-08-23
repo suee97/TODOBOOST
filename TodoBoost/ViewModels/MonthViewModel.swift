@@ -32,7 +32,7 @@ final class MonthViewModel {
                 guard let data = data else { return }
                 var tmp: [[Schedule]] = Array(repeating: [], count: 32)
                 for s in data {
-                    tmp[s.day].append(s)
+//                    tmp[s.day].append(s)
                 }
                 self.schedules = tmp
             }

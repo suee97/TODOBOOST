@@ -159,6 +159,7 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     
     private func isAllViewHide(_ isHidden: Bool) {
         calendar.isHidden = isHidden
+        tableView.isHidden = isHidden
     }
     
     private func setUpSubscribers() {
@@ -171,20 +172,14 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
                 self.tableView.reloadData()
             }
         })
-        
-//        daySubscriber = viewModel.$selectedDay.sink(receiveValue: {
-//            self.setUpScrollSize(count: self.viewModel.schedules[$0!].count)
-//        })
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd"
-        let day = Int(dateFormatter.string(from: date))!
+        let day = viewModel.getDay(of: date)
         viewModel.selectedDay = day
-        tableView.reloadData()
-        
         changeTodayLabel(date: date)
+        tableView.reloadData()
+        print("MonthViewController calendar() - selectedDay: \(day)")
     }
     
     private func changeTodayLabel(date: Date) {

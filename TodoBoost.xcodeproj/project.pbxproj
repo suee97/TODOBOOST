@@ -28,7 +28,7 @@
 		5BF022362A3AEBEE0070394C /* MonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022352A3AEBEE0070394C /* MonthViewModel.swift */; };
 		5BF022382A3AEC080070394C /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022372A3AEC080070394C /* DayViewModel.swift */; };
 		5BF0223A2A3AEC180070394C /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022392A3AEC180070394C /* ConfigViewModel.swift */; };
-		5BF0223C2A3AEE6D0070394C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0223B2A3AEE6D0070394C /* Schedule.swift */; };
+		5BF0223C2A3AEE6D0070394C /* Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0223B2A3AEE6D0070394C /* Schedules.swift */; };
 		5BF0223E2A3B02B90070394C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0223D2A3B02B90070394C /* NetworkService.swift */; };
 		5BF022402A3CD68F0070394C /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0223F2A3CD68F0070394C /* APIResult.swift */; };
 /* End PBXBuildFile section */
@@ -68,7 +68,7 @@
 		5BF022352A3AEBEE0070394C /* MonthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewModel.swift; sourceTree = "<group>"; };
 		5BF022372A3AEC080070394C /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		5BF022392A3AEC180070394C /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
-		5BF0223B2A3AEE6D0070394C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		5BF0223B2A3AEE6D0070394C /* Schedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedules.swift; sourceTree = "<group>"; };
 		5BF0223D2A3B02B90070394C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5BF0223F2A3CD68F0070394C /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		79E81527486872D2DF7C77F2 /* Pods-TodoBoost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoBoost.debug.xcconfig"; path = "Target Support Files/Pods-TodoBoost/Pods-TodoBoost.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 			children = (
 				5BF022262A387D7C0070394C /* LoadingState.swift */,
 				5BF0222B2A3880C10070394C /* AuthResult.swift */,
-				5BF0223B2A3AEE6D0070394C /* Schedule.swift */,
+				5BF0223B2A3AEE6D0070394C /* Schedules.swift */,
 				5BF0223F2A3CD68F0070394C /* APIResult.swift */,
 			);
 			path = Models;
@@ -372,7 +372,7 @@
 				5BF021D02A21C0280070394C /* MainViewController.swift in Sources */,
 				5BF022212A3603510070394C /* LoginViewModel.swift in Sources */,
 				5BF022402A3CD68F0070394C /* APIResult.swift in Sources */,
-				5BF0223C2A3AEE6D0070394C /* Schedule.swift in Sources */,
+				5BF0223C2A3AEE6D0070394C /* Schedules.swift in Sources */,
 				5BF0223A2A3AEC180070394C /* ConfigViewModel.swift in Sources */,
 				5BF0223E2A3B02B90070394C /* NetworkService.swift in Sources */,
 				5BF022382A3AEC080070394C /* DayViewModel.swift in Sources */,
