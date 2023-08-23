@@ -25,18 +25,20 @@ final class MonthViewModel {
     }
     
     func getScheduleInfo() {
+        print("MonthViewModel - getScheduleInfo() called")
         NetworkService.shared.getScheduleInfo(completion: { res, data in
-            
+
             // fetch month data
             if res == .success {
                 guard let data = data else { return }
                 var tmp: [[Schedule]] = Array(repeating: [], count: 32)
-                for s in data {
-//                    tmp[s.day].append(s)
+                for e in data {
+                    let str = e.date.suffix(2)
+                    tmp[Int(str)!].append(e)
                 }
                 self.schedules = tmp
             }
-            
+
             // set loading state
             self.loadingState = .done
         })

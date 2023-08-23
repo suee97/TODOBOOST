@@ -1,7 +1,7 @@
 import Foundation
 
 struct Schedules: Codable {
-    let schedules: [Schedule]
+    var schedules: [Schedule]
 }
 
 struct Schedule: Codable {
