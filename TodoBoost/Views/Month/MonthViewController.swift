@@ -202,7 +202,8 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.schedules[viewModel.selectedDay].count
+        // 수정 필요 
+        return viewModel.schedules[viewModel.selectedDay].schedules.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

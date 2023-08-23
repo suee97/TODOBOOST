@@ -8,7 +8,7 @@ final class MonthViewModel {
     var today: Date!
     
     @Published var loadingState: LoadingState!
-    @Published var schedules: [[Schedule]] = Array(repeating: [], count: 32)
+    @Published var schedules: [DaySchedules] = Array(repeating: DaySchedules(date: "", schedules: [:]), count: 32)
     @Published var selectedDay: Int!
     
     init() {
@@ -31,12 +31,9 @@ final class MonthViewModel {
             // fetch month data
             if res == .success {
                 guard let data = data else { return }
-                var tmp: [[Schedule]] = Array(repeating: [], count: 32)
                 for e in data {
-                    let str = e.date.suffix(2)
-                    tmp[Int(str)!].append(e)
+                    self.schedules[Int(e.date.suffix(2))!] = e
                 }
-                self.schedules = tmp
             }
 
             // set loading state
