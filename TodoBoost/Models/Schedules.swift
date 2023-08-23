@@ -2,7 +2,6 @@ import Foundation
 
 struct Schedules: Codable {
     let schedules: [Schedule]
-    let categoryInfo: CategoryInfo
 }
 
 struct Schedule: Codable {
@@ -14,9 +13,6 @@ struct Schedule: Codable {
     let isImportant: Bool
     let isDone: Bool
     let schedulePriority: Int
-}
-
-struct CategoryInfo: Codable {
     let category: String
     let categoryPriority: Int
 }
