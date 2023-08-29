@@ -8,10 +8,9 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     // MARK: Properties
     private let viewModel = MonthViewModel()
     private var loadingSubscriber: AnyCancellable!
-    private var daySubscriber: AnyCancellable!
     
     private let contentSideMargin: ConstraintInsetTarget = 16
-    private let tableView = UITableView()
+    private let tableView = UITableView(frame: .zero, style: .grouped)
 
     private let headerView: UIView = {
         let view = UIView()
@@ -82,6 +81,7 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         calendar.calendarWeekdayView.weekdayLabels[6].text = "Sa"
         return calendar
     }()
+    
     
     // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -202,13 +202,41 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // 수정 필요 
-        return viewModel.schedules[viewModel.selectedDay].schedules.count
+        var sectionCount = Array(repeating: 0, count: viewModel.categories.count)
+        for i in viewModel.schedules[viewModel.selectedDay] {
+            sectionCount[i.categoryIndex] += 1
+        }
+        
+        return sectionCount[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "schedule_cell", for: indexPath)
         
         return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.categories.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: Commons.shared.screenWidth, height: 0))
+        header.backgroundColor = .red
+        
+        let button = UIButton()
+        button.setTitle(viewModel.categories[section], for: .normal)
+        button.backgroundColor = .blue
+        
+        header.addSubview(button)
+        button.snp.makeConstraints({ m in
+            m.center.equalTo(header)
+        })
+        
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
     }
 }

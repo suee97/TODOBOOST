@@ -1,20 +1,18 @@
 import Foundation
 
-struct MonthSchedule: Codable {
-    let monthSchedule: [DaySchedules]
-}
-
-struct DaySchedules: Codable {
-    let date: String
-    let schedules: [String: [Schedule]]
+struct MonthSchedules: Codable {
+    let categories: [String]
+    let schedules: [Schedule]
 }
 
 struct Schedule: Codable {
+    let categoryIndex: Int
+    let priority: Int
     let id: Int
+    let date: String
     let title: String
     let isNoti: Bool
     let notiTime: String
     let isImportant: Bool
     let isDone: Bool
-    let priority: Int
 }

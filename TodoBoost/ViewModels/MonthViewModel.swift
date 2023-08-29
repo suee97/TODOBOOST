@@ -6,9 +6,10 @@ import Combine
 final class MonthViewModel {
     
     var today: Date!
+    var categories = [String]()
     
     @Published var loadingState: LoadingState!
-    @Published var schedules: [DaySchedules] = Array(repeating: DaySchedules(date: "", schedules: [:]), count: 32)
+    @Published var schedules: [[Schedule]] = Array(repeating: [Schedule](), count: 32)
     @Published var selectedDay: Int!
     
     init() {
@@ -31,8 +32,9 @@ final class MonthViewModel {
             // fetch month data
             if res == .success {
                 guard let data = data else { return }
-                for e in data {
-                    self.schedules[Int(e.date.suffix(2))!] = e
+                self.categories = data.categories
+                for i in data.schedules {
+                    self.schedules[Int(i.date.suffix(2))!].append(i)
                 }
             }
 
