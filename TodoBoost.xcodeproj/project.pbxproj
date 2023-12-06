@@ -10,6 +10,21 @@
 		1FCE0542DD3B373B10FE8A17 /* Pods_TodoBoost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213EC7FE1E7892187E76A3B9 /* Pods_TodoBoost.framework */; };
 		5B71DF552A497C6300564D50 /* MonthVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B71DF542A497C6300564D50 /* MonthVMTests.swift */; };
 		5B71DF5D2A52AE6200564D50 /* MonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B71DF5C2A52AE6200564D50 /* MonthTableViewCell.swift */; };
+		5B97D4C12B147765009CEA05 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97D4C02B147765009CEA05 /* DatePickerViewController.swift */; };
+		5B97D4C42B1577A0009CEA05 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97D4C32B1577A0009CEA05 /* Configuration.swift */; };
+		5B97D4C62B157D3F009CEA05 /* ThemeColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97D4C52B157D3F009CEA05 /* ThemeColorViewController.swift */; };
+		5B97D4C82B15BAC5009CEA05 /* ImportantColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97D4C72B15BAC5009CEA05 /* ImportantColorViewController.swift */; };
+		5B97D4CA2B16BCA9009CEA05 /* CategorySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97D4C92B16BCA9009CEA05 /* CategorySettingViewController.swift */; };
+		5BB933F82AF4ADB4000185D1 /* StringDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB933F72AF4ADB4000185D1 /* StringDate.swift */; };
+		5BB9F1632AD8CF3800C347F3 /* ConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9F1622AD8CF3800C347F3 /* ConfigCell.swift */; };
+		5BB9F1672AD8F2BC00C347F3 /* ConfigRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9F1662AD8F2BC00C347F3 /* ConfigRoute.swift */; };
+		5BDD4A2C2ACDA8BA00937352 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD4A2B2ACDA8BA00937352 /* SearchViewController.swift */; };
+		5BDD4A2E2ACDB14400937352 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD4A2D2ACDB14400937352 /* Follower.swift */; };
+		5BDD4A302ACDB25100937352 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD4A2F2ACDB25100937352 /* SearchViewModel.swift */; };
+		5BDD4A322ACDBFA300937352 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD4A312ACDBFA300937352 /* FollowerCell.swift */; };
+		5BDD4A342AD028A600937352 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD4A332AD028A600937352 /* ProfileViewController.swift */; };
+		5BDD4A462AD67B9100937352 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD4A452AD67B9100937352 /* ProfileViewModel.swift */; };
+		5BDD4A482AD6863A00937352 /* FollowerScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD4A472AD6863A00937352 /* FollowerScheduleCell.swift */; };
 		5BF021CC2A21C0280070394C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF021CB2A21C0280070394C /* AppDelegate.swift */; };
 		5BF021CE2A21C0280070394C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF021CD2A21C0280070394C /* SceneDelegate.swift */; };
 		5BF021D02A21C0280070394C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF021CF2A21C0280070394C /* MainViewController.swift */; };
@@ -23,10 +38,8 @@
 		5BF0222A2A38806E0070394C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022292A38806E0070394C /* AuthService.swift */; };
 		5BF0222C2A3880C10070394C /* AuthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0222B2A3880C10070394C /* AuthResult.swift */; };
 		5BF0222E2A38C3E40070394C /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0222D2A38C3E40070394C /* MonthViewController.swift */; };
-		5BF022302A38C4090070394C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0222F2A38C4090070394C /* SearchViewController.swift */; };
 		5BF022322A38C4190070394C /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022312A38C4190070394C /* ConfigViewController.swift */; };
 		5BF022362A3AEBEE0070394C /* MonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022352A3AEBEE0070394C /* MonthViewModel.swift */; };
-		5BF022382A3AEC080070394C /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022372A3AEC080070394C /* DayViewModel.swift */; };
 		5BF0223A2A3AEC180070394C /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF022392A3AEC180070394C /* ConfigViewModel.swift */; };
 		5BF0223C2A3AEE6D0070394C /* Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0223B2A3AEE6D0070394C /* Schedules.swift */; };
 		5BF0223E2A3B02B90070394C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0223D2A3B02B90070394C /* NetworkService.swift */; };
@@ -48,6 +61,22 @@
 		5B71DF522A497C6300564D50 /* MonthVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonthVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B71DF542A497C6300564D50 /* MonthVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthVMTests.swift; sourceTree = "<group>"; };
 		5B71DF5C2A52AE6200564D50 /* MonthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTableViewCell.swift; sourceTree = "<group>"; };
+		5B97D4C02B147765009CEA05 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		5B97D4C22B14886D009CEA05 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5B97D4C32B1577A0009CEA05 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		5B97D4C52B157D3F009CEA05 /* ThemeColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorViewController.swift; sourceTree = "<group>"; };
+		5B97D4C72B15BAC5009CEA05 /* ImportantColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantColorViewController.swift; sourceTree = "<group>"; };
+		5B97D4C92B16BCA9009CEA05 /* CategorySettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySettingViewController.swift; sourceTree = "<group>"; };
+		5BB933F72AF4ADB4000185D1 /* StringDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDate.swift; sourceTree = "<group>"; };
+		5BB9F1622AD8CF3800C347F3 /* ConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCell.swift; sourceTree = "<group>"; };
+		5BB9F1662AD8F2BC00C347F3 /* ConfigRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigRoute.swift; sourceTree = "<group>"; };
+		5BDD4A2B2ACDA8BA00937352 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5BDD4A2D2ACDB14400937352 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		5BDD4A2F2ACDB25100937352 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		5BDD4A312ACDBFA300937352 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
+		5BDD4A332AD028A600937352 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5BDD4A452AD67B9100937352 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		5BDD4A472AD6863A00937352 /* FollowerScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerScheduleCell.swift; sourceTree = "<group>"; };
 		5BF021C82A21C0280070394C /* TodoBoost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoBoost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF021CB2A21C0280070394C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BF021CD2A21C0280070394C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,10 +92,8 @@
 		5BF022292A38806E0070394C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5BF0222B2A3880C10070394C /* AuthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResult.swift; sourceTree = "<group>"; };
 		5BF0222D2A38C3E40070394C /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
-		5BF0222F2A38C4090070394C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5BF022312A38C4190070394C /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		5BF022352A3AEBEE0070394C /* MonthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewModel.swift; sourceTree = "<group>"; };
-		5BF022372A3AEC080070394C /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		5BF022392A3AEC180070394C /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
 		5BF0223B2A3AEE6D0070394C /* Schedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedules.swift; sourceTree = "<group>"; };
 		5BF0223D2A3B02B90070394C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -107,8 +134,40 @@
 			children = (
 				5BF0222D2A38C3E40070394C /* MonthViewController.swift */,
 				5B71DF5C2A52AE6200564D50 /* MonthTableViewCell.swift */,
+				5B97D4C02B147765009CEA05 /* DatePickerViewController.swift */,
 			);
 			path = Month;
+			sourceTree = "<group>";
+		};
+		5BB9F15F2AD7CBD500C347F3 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5BF022312A38C4190070394C /* ConfigViewController.swift */,
+				5B97D4C52B157D3F009CEA05 /* ThemeColorViewController.swift */,
+				5BB9F1622AD8CF3800C347F3 /* ConfigCell.swift */,
+				5B97D4C72B15BAC5009CEA05 /* ImportantColorViewController.swift */,
+				5B97D4C92B16BCA9009CEA05 /* CategorySettingViewController.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		5BDD4A2A2ACDA8A600937352 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5BDD4A352AD028D000937352 /* Profile */,
+				5BDD4A2B2ACDA8BA00937352 /* SearchViewController.swift */,
+				5BDD4A312ACDBFA300937352 /* FollowerCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		5BDD4A352AD028D000937352 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5BDD4A332AD028A600937352 /* ProfileViewController.swift */,
+				5BDD4A472AD6863A00937352 /* FollowerScheduleCell.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		5BF021BF2A21C0280070394C = {
@@ -153,6 +212,7 @@
 			children = (
 				5BF022222A363B180070394C /* Extensions.swift */,
 				5BF022242A363CA70070394C /* Commons.swift */,
+				5B97D4C32B1577A0009CEA05 /* Configuration.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -164,6 +224,9 @@
 				5BF0222B2A3880C10070394C /* AuthResult.swift */,
 				5BF0223B2A3AEE6D0070394C /* Schedules.swift */,
 				5BF0223F2A3CD68F0070394C /* APIResult.swift */,
+				5BDD4A2D2ACDB14400937352 /* Follower.swift */,
+				5BB9F1662AD8F2BC00C347F3 /* ConfigRoute.swift */,
+				5BB933F72AF4ADB4000185D1 /* StringDate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,11 +234,11 @@
 		5BF021E82A2B2DEA0070394C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5BB9F15F2AD7CBD500C347F3 /* Config */,
+				5BDD4A2A2ACDA8A600937352 /* Search */,
 				5B71DF5B2A52AE2800564D50 /* Month */,
 				5BF021CF2A21C0280070394C /* MainViewController.swift */,
 				5BF0221E2A36033D0070394C /* LoginViewController.swift */,
-				5BF0222F2A38C4090070394C /* SearchViewController.swift */,
-				5BF022312A38C4190070394C /* ConfigViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,8 +248,9 @@
 			children = (
 				5BF022202A3603510070394C /* LoginViewModel.swift */,
 				5BF022352A3AEBEE0070394C /* MonthViewModel.swift */,
-				5BF022372A3AEC080070394C /* DayViewModel.swift */,
 				5BF022392A3AEC180070394C /* ConfigViewModel.swift */,
+				5BDD4A2F2ACDB25100937352 /* SearchViewModel.swift */,
+				5BDD4A452AD67B9100937352 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -278,11 +342,12 @@
 			};
 			buildConfigurationList = 5BF021C32A21C0280070394C /* Build configuration list for PBXProject "TodoBoost" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 5BF021BF2A21C0280070394C;
 			productRefGroup = 5BF021C92A21C0280070394C /* Products */;
@@ -370,21 +435,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF021D02A21C0280070394C /* MainViewController.swift in Sources */,
+				5B97D4C82B15BAC5009CEA05 /* ImportantColorViewController.swift in Sources */,
+				5BB9F1672AD8F2BC00C347F3 /* ConfigRoute.swift in Sources */,
+				5BDD4A2E2ACDB14400937352 /* Follower.swift in Sources */,
 				5BF022212A3603510070394C /* LoginViewModel.swift in Sources */,
+				5BB9F1632AD8CF3800C347F3 /* ConfigCell.swift in Sources */,
 				5BF022402A3CD68F0070394C /* APIResult.swift in Sources */,
+				5B97D4C42B1577A0009CEA05 /* Configuration.swift in Sources */,
+				5B97D4C62B157D3F009CEA05 /* ThemeColorViewController.swift in Sources */,
+				5B97D4CA2B16BCA9009CEA05 /* CategorySettingViewController.swift in Sources */,
 				5BF0223C2A3AEE6D0070394C /* Schedules.swift in Sources */,
+				5B97D4C12B147765009CEA05 /* DatePickerViewController.swift in Sources */,
 				5BF0223A2A3AEC180070394C /* ConfigViewModel.swift in Sources */,
+				5BDD4A462AD67B9100937352 /* ProfileViewModel.swift in Sources */,
 				5BF0223E2A3B02B90070394C /* NetworkService.swift in Sources */,
-				5BF022382A3AEC080070394C /* DayViewModel.swift in Sources */,
 				5BF021CC2A21C0280070394C /* AppDelegate.swift in Sources */,
 				5BF022322A38C4190070394C /* ConfigViewController.swift in Sources */,
 				5BF022252A363CA70070394C /* Commons.swift in Sources */,
 				5BF0222E2A38C3E40070394C /* MonthViewController.swift in Sources */,
+				5BDD4A482AD6863A00937352 /* FollowerScheduleCell.swift in Sources */,
 				5BF0221F2A36033D0070394C /* LoginViewController.swift in Sources */,
 				5BF022272A387D7C0070394C /* LoadingState.swift in Sources */,
-				5BF022302A38C4090070394C /* SearchViewController.swift in Sources */,
 				5BF0222C2A3880C10070394C /* AuthResult.swift in Sources */,
+				5BDD4A2C2ACDA8BA00937352 /* SearchViewController.swift in Sources */,
+				5BDD4A342AD028A600937352 /* ProfileViewController.swift in Sources */,
+				5BB933F82AF4ADB4000185D1 /* StringDate.swift in Sources */,
+				5BDD4A302ACDB25100937352 /* SearchViewModel.swift in Sources */,
 				5BF0222A2A38806E0070394C /* AuthService.swift in Sources */,
+				5BDD4A322ACDBFA300937352 /* FollowerCell.swift in Sources */,
 				5B71DF5D2A52AE6200564D50 /* MonthTableViewCell.swift in Sources */,
 				5BF021CE2A21C0280070394C /* SceneDelegate.swift in Sources */,
 				5BF022362A3AEBEE0070394C /* MonthViewModel.swift in Sources */,
@@ -407,6 +485,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5BF021D72A21C0280070394C /* Base */,
+				5B97D4C22B14886D009CEA05 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -462,6 +541,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -522,6 +602,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -580,6 +661,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2K66M6663R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TodoBoost/Info.plist;
@@ -609,6 +691,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2K66M6663R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TodoBoost/Info.plist;

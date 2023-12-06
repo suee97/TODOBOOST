@@ -10,9 +10,9 @@ struct Schedule: Codable {
     let priority: Int
     let id: Int
     let date: String
-    let title: String
+    var title: String
     let isNoti: Bool
     let notiTime: String
     let isImportant: Bool
-    let isDone: Bool
+    var isDone: Bool
 }

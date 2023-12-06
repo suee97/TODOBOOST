@@ -5,9 +5,11 @@ class MainViewController: UIViewController, UITabBarControllerDelegate {
     
     private let myTabBarController = UITabBarController()
     
-    private let monthViewController = MonthViewController()
+    private let viewModel = MonthViewModel()
+    
+    private lazy var monthViewController = MonthViewController(viewModel: viewModel)
     private let dayViewController = SearchViewController()
-    private let configViewController = ConfigViewController()
+    private lazy var configViewController = ConfigViewController(viewModel: viewModel)
     private var viewList: [UIViewController] = []
     
     private let monthItem: UITabBarItem = {
@@ -35,6 +37,7 @@ class MainViewController: UIViewController, UITabBarControllerDelegate {
         super.viewDidLoad()
         configureUI()
         setUpTabBar()
+        Commons.shared.requestAuthNoti()
     }
     
     private func configureUI() {
@@ -51,13 +54,20 @@ class MainViewController: UIViewController, UITabBarControllerDelegate {
     
     private func setUpTabBar() {
         viewList = [monthViewController, dayViewController, configViewController]
-        myTabBarController.setViewControllers(viewList, animated: true)
-        myTabBarController.tabBar.backgroundColor = .tabBarColor
-        
         monthViewController.tabBarItem = monthItem
         dayViewController.tabBarItem = dayItem
         configViewController.tabBarItem = configItem
-
+        
+        let navConList = viewList.map({
+            UINavigationController(rootViewController: $0)
+        })
+        
+        for e in navConList {
+            e.isNavigationBarHidden = true
+        }
+        
+        myTabBarController.setViewControllers(navConList, animated: true)
+        myTabBarController.tabBar.backgroundColor = .tabBarColor
     }
 
 }

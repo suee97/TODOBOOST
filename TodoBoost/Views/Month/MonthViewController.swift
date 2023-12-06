@@ -3,18 +3,26 @@ import SnapKit
 import Combine
 import FSCalendar
 
-class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate, UITableViewDataSource {
+final class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: Properties
-    private let viewModel = MonthViewModel()
-    private var loadingSubscriber: AnyCancellable!
+    // MARK: - Constants
+    private enum Constants {
+        enum UI {
+            static let contentSideMargin: ConstraintInsetTarget = 16
+        }
+        enum ID {
+            static let cellId = "schedule_cell"
+        }
+    }
     
-    private let contentSideMargin: ConstraintInsetTarget = 16
+    
+    // MARK: - Properties
+    private var viewModel: MonthViewModel
+    private var cancellables = Set<AnyCancellable>()
     private let tableView = UITableView(frame: .zero, style: .grouped)
 
     private let headerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .primaryPurple
         return view
     }()
     
@@ -28,7 +36,6 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     
     private let todayLabelView: UIView = {
         let view = UIView()
-        view.backgroundColor = .secondaryPurple
         return view
     }()
     
@@ -39,11 +46,71 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         return label
     }()
     
+    private lazy var memoTextView: UITextView = {
+        let textView = UITextView()
+        textView.textColor = .white
+        textView.text = viewModel.getMemo()
+        textView.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        textView.autocorrectionType = .no
+        textView.spellCheckingType = .no
+        textView.autocapitalizationType = .none
+        textView.font = UIFont.systemFont(ofSize: 14)
+        return textView
+    }()
+    
+    private lazy var memoEditButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(systemName: "pencil"), for: .normal)
+        button.tintColor = .white
+        button.addAction(UIAction(handler: { [weak self] _ in
+            guard let self = self else { return }
+            if self.memoTextView.isEditable {
+                self.viewModel.setMemo(self.memoTextView.text)
+            }
+            self.memoTextView.isEditable = !self.memoTextView.isEditable
+        }), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var footerView: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: Commons.shared.screenWidth, height: 240))
+        
+        let memoLabel = UILabel()
+        memoLabel.font = UIFont.systemFont(ofSize: 24)
+        memoLabel.textColor = .white
+        memoLabel.text = "메모"
+
+        view.addSubview(memoLabel)
+        view.addSubview(memoTextView)
+        view.addSubview(memoEditButton)
+        
+        memoLabel.snp.makeConstraints({ m in
+            m.left.equalToSuperview().inset(24)
+            m.top.equalToSuperview().inset(40)
+        })
+        
+        memoTextView.snp.makeConstraints({ m in
+            m.top.equalTo(memoLabel.snp.bottom).offset(12)
+            m.centerX.equalToSuperview()
+            m.width.equalTo(360)
+            m.height.equalTo(132)
+        })
+        
+        memoEditButton.snp.makeConstraints({ m in
+            m.left.equalTo(memoLabel.snp.right).offset(8)
+            m.centerY.equalTo(memoLabel)
+            m.width.height.equalTo(24)
+        })
+        
+        return view
+    }()
+    
     private let indicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.hidesWhenStopped = true
         indicator.color = .white
         indicator.style = .medium
+        indicator.isUserInteractionEnabled = false
         indicator.startAnimating()
         return indicator
     }()
@@ -53,7 +120,6 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         divider.backgroundColor = .secondaryWhite
         
         let calendar = FSCalendar()
-        calendar.backgroundColor = .primaryPurple
         calendar.locale = Locale(identifier: "en")
         calendar.appearance.headerTitleColor = .white
         calendar.appearance.weekdayTextColor = .white
@@ -83,12 +149,22 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     }()
     
     
-    // MARK: Lifecycle
+    // MARK: - Lifecycle
+    init(viewModel: MonthViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         isAllViewHide(true)
         indicator.startAnimating()
         viewModel.getScheduleInfo()
+        memoTextView.isEditable = false
     }
     
     override func viewDidLoad() {
@@ -96,13 +172,34 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         setUpTableView()
         setUpDelegate()
         configureUI()
-        setUpSubscribers()
+        setUpBindings()
     }
     
+    private func setUpBindings() {
+        viewModel.$loadingState.sink(receiveValue: {
+            // API 호출 이후
+            if $0 == .done {
+                self.changeTodayLabel(stringDate: self.viewModel.today)
+                self.indicator.stopAnimating()
+                self.isAllViewHide(false)
+                self.tableView.reloadData()
+            }
+        }).store(in: &cancellables)
+        
+        Configuration.shared.$themeColor.sink(receiveValue: { value in
+            self.view.backgroundColor = value["primaryColor"]
+            self.memoTextView.backgroundColor = value["primaryColor"]
+            self.calendar.backgroundColor = value["primaryColor"]
+            self.tableView.backgroundColor = value["secondaryColor"]
+            self.headerView.backgroundColor = value["primaryColor"]
+            self.todayLabelView.backgroundColor = value["secondaryColor"]
+            
+            self.tableView.reloadData()
+        }).store(in: &cancellables)
+    }
     
-    // MARK: UI
+    // MARK: - UI
     private func configureUI() {
-        view.backgroundColor = .primaryPurple
         isAllViewHide(true)
         
         view.addSubview(indicator)
@@ -132,7 +229,7 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         })
         
         calendar.snp.makeConstraints({ m in
-            m.left.right.equalTo(headerView).inset(contentSideMargin)
+            m.left.right.equalTo(headerView).inset(Constants.UI.contentSideMargin)
             m.top.equalTo(appNameLabel.snp.bottom)
             m.bottom.equalTo(todayLabelView.snp.top)
         })
@@ -144,12 +241,12 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         
         todayLabel.snp.makeConstraints({ m in
             m.centerY.equalTo(todayLabelView)
-            m.left.equalTo(todayLabelView).inset(44)
+            m.left.equalTo(todayLabelView).inset(24)
         })
     }
     
     
-    // MARK: Functions
+    // MARK: - Functions & Selectors
     private func setUpDelegate() {
         calendar.delegate = self
         calendar.dataSource = self
@@ -162,48 +259,31 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
         tableView.isHidden = isHidden
     }
     
-    private func setUpSubscribers() {
-        loadingSubscriber = viewModel.$loadingState.sink(receiveValue: {
-            // API 호출 이후
-            if $0 == .done {
-                self.changeTodayLabel(date: self.viewModel.today)
-                self.indicator.stopAnimating()
-                self.isAllViewHide(false)
-                self.tableView.reloadData()
-            }
-        })
-    }
-    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let day = viewModel.getDay(of: date)
-        viewModel.selectedDay = day
-        changeTodayLabel(date: date)
+        let stringDate = viewModel.getStringDateFromDate(of: date)
+        viewModel.selectedDay = stringDate
+        changeTodayLabel(stringDate: stringDate)
         tableView.reloadData()
-        print("MonthViewController calendar() - selectedDay: \(day)")
     }
     
-    private func changeTodayLabel(date: Date) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM"
-        let month = Int(dateFormatter.string(from: date))!
-        dateFormatter.dateFormat = "dd"
-        let day = Int(dateFormatter.string(from: date))!
-        todayLabel.text = "\(month)월 \(day)일"
+    private func changeTodayLabel(stringDate: StringDate) {
+        todayLabel.text = "\(stringDate.month)월 \(stringDate.day)일"
     }
     
     private func setUpTableView() {
-        tableView.register(MonthTableViewCell.self, forCellReuseIdentifier: "schedule_cell")
+        tableView.register(MonthTableViewCell.self, forCellReuseIdentifier: Constants.ID.cellId)
         tableView.rowHeight = 48
-//        tableView.backgroundColor = .secondaryPurple
-        tableView.backgroundColor = .brown
         tableView.bounces = false
+        tableView.sectionHeaderTopPadding = 0
+        tableView.separatorStyle = .none
         
         tableView.tableHeaderView = headerView
+        tableView.tableFooterView = footerView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var sectionCount = Array(repeating: 0, count: viewModel.categories.count)
-        for i in viewModel.schedules[viewModel.selectedDay] {
+        for i in viewModel.schedules[viewModel.selectedDay.day] {
             sectionCount[i.categoryIndex] += 1
         }
         
@@ -211,8 +291,24 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "schedule_cell", for: indexPath)
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ID.cellId, for: indexPath) as? MonthTableViewCell else { return UITableViewCell() }
+        for i in 0..<viewModel.schedules[viewModel.selectedDay.day].count {
+            if viewModel.schedules[viewModel.selectedDay.day][i].categoryIndex == indexPath.section {
+                cell.schedule = viewModel.schedules[viewModel.selectedDay.day][i + indexPath.row]
+                break
+            }
+        }
+        cell.viewModel = viewModel
+        cell.onTapDelete = {
+            self.tableView.reloadData()
+        }
+        cell.onTapNotificationSetting = {
+            let vc = DatePickerViewController()
+            vc.schedule = cell.schedule
+            vc.delegate = self
+            self.navigationController?.present(vc, animated: true)
+        }
+        cell.contentView.backgroundColor = Configuration.shared.themeColor["secondaryColor"]
         return cell
     }
     
@@ -222,15 +318,27 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: Commons.shared.screenWidth, height: 0))
-        header.backgroundColor = .red
+        header.backgroundColor = .clear
         
         let button = UIButton()
-        button.setTitle(viewModel.categories[section], for: .normal)
-        button.backgroundColor = .blue
-        
+        button.setTitle(viewModel.categories[section] + " +", for: .normal)
+        button.setTitleColor(.primaryMint, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
+        button.backgroundColor = .clear
+        button.addAction(UIAction(handler: { [weak self] _ in
+            guard let self = self else { return }
+            self.viewModel.appendEmptySchedule(to: self.viewModel.categories[section], stringDate: self.viewModel.selectedDay)
+            let row = tableView.numberOfRows(inSection: section)
+            self.tableView.reloadData()
+            
+            let newCell = (self.tableView.cellForRow(at: [section, row]) as! MonthTableViewCell)
+            newCell.isFocusing = true
+        }), for: .touchUpInside)
+
         header.addSubview(button)
         button.snp.makeConstraints({ m in
-            m.center.equalTo(header)
+            m.centerY.equalTo(header)
+            m.left.equalTo(header).inset(Constants.UI.contentSideMargin)
         })
         
         return header
@@ -238,5 +346,27 @@ class MonthViewController: UIViewController, FSCalendarDelegate, FSCalendarDataS
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
+    }
+}
+
+
+// MARK: - DatePickerDelegate
+extension MonthViewController: DatePickerDelegate {
+    func onTapConfirm(schedule: Schedule, date: Date) {
+        
+        if date.timeIntervalSince1970 - Date().timeIntervalSince1970 <= 0 { return }
+        
+        // 알림설정 노티 보내기
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let dateStr = dateFormatter.string(from: date)
+        Commons.shared.requestSendNoti(title: "알림 설정", body: "\(dateStr) 알림이 설정되었습니다.", seconds: 1)
+        
+        // 로컬 노티 설정
+        let interval = date.timeIntervalSince1970 - Date().timeIntervalSince1970
+        
+        // 테스트용
+        Commons.shared.requestSendNoti(title: "알림", body: "\(schedule.title)", seconds: Int(5))
+        
     }
 }

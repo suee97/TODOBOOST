@@ -9,6 +9,7 @@ target 'TodoBoost' do
   pod 'Alamofire', '~> 5.5'
   pod 'SnapKit', '~> 5.6.0'
   pod 'FSCalendar'
+  pod 'Kingfisher', '~> 5.0'
 
   # Pods for TodoBoost
 
